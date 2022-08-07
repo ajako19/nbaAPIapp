@@ -9,6 +9,7 @@ interface Props {
 
 export default function MainPage({inputData}:Props) {
   const [data, setData] = useState<Player[]>()
+  const [extendedInfo, setExtendedInfo] = useState(false);
 
 
   const options = {
@@ -23,8 +24,8 @@ export default function MainPage({inputData}:Props) {
 
   useEffect(() => {
     axios.request(options).then(function (response) {
-      setData(response.data.data)
       console.log(response.data.data)
+      setData(response.data.data)
     }).catch(function (error) {
       console.error(error);
     });
@@ -36,8 +37,15 @@ export default function MainPage({inputData}:Props) {
           {data?.map((player) => (
             <div className="mp-eachPlayer">
               <h1>{player.first_name} {player.last_name}</h1>
-              <h1 className="mp-teamName">{player.team.full_name}</h1>
-              <button className="mp-button">View Stats</button>
+              <button onClick={() => {
+                setExtendedInfo(true)
+              }} className="mp-button">View Info</button>
+              <div className={extendedInfo ? "mp-extendedInfo" : "mainPageNone"}>
+                {player.position ? <h1>Position: {player.position}</h1> : null}
+                {player.height_feet ? <h1>Height: {player.height_feet}"{player.height_inches}</h1> : null}
+                {player.weight_pounds ? <h1>Weight: {player.weight_pounds}</h1> : null}
+                <h1>Team: {player.team.full_name}</h1>
+              </div>
             </div>
           ))}
         </div>

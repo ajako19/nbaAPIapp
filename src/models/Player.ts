@@ -8,4 +8,5 @@ export default interface Player {
     height_inches: number;
     team: Team;
     position: string;
+    weight_pounds: number;
 }

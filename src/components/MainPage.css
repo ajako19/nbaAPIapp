@@ -42,3 +42,8 @@
 .mp-teamName {
     font-size: 20px;
 }
+
+.mp-extendedInfo {
+    width: 350px;
+    background-color: rgb(227, 227, 227);
+}
