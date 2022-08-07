@@ -1,0 +1,44 @@
+.MainPage {
+    width: 100%;
+    height: 500px;
+}
+
+.mainPageWrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playerName {
+    margin-right: 10px;
+}
+
+.mainPageNone {
+    display: none;
+}
+
+.mp-eachPlayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.mp-button {
+    width: 70px;
+    font-size: 10px;
+    transition: ease 0.3s;
+    border: 1px solid rgb(90, 90, 90);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.mp-button:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.mp-teamName {
+    font-size: 20px;
+}

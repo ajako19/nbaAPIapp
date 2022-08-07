@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    height: 75px;
+    background-color: brown;
+}
+
+.header-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* make the wrap 100% and 100% height and w of the header */
+}
+
+.header-input {
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    padding: 5px;
+}
